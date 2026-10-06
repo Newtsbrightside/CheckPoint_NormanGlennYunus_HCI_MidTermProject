@@ -381,6 +381,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             </svg>
                         </button>
                         <img src="${product.images[0]}" alt="${product.name}" class="card-product-img" loading="lazy">
+                        <button class="btn-card-quick-add" data-id="${product.id}" aria-label="Add to Cart">
+                            <svg class="icon-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                            </svg>
+                        </button>
                     </div>
                     <div class="card-details-box">
                         <h4 class="card-product-title">${product.name}</h4>
@@ -559,8 +566,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === pdpModalOverlay) closeProductDetail();
     });
 
-    // Delegate Card Click to Open PDP
+    // Delegate Card Click to Open PDP or Quick-Add
     productGrid.addEventListener('click', (e) => {
+        // Quick-Add to Cart button
+        const quickAddBtn = e.target.closest('.btn-card-quick-add');
+        if (quickAddBtn) {
+            e.stopPropagation();
+            const id = Number(quickAddBtn.dataset.id);
+            addToCart(id);
+            openBag();
+            return;
+        }
+
         const wishlistBtn = e.target.closest('.btn-card-wishlist');
         if (wishlistBtn) {
             e.stopPropagation();
@@ -1133,4 +1150,52 @@ document.addEventListener('DOMContentLoaded', () => {
     updateBagUI();
     updateWishlistUI();
     updateAuthUI();
+
+    /* ==========================================================================
+       13. HEADER SCROLL SHADOW
+       ========================================================================== */
+    const siteHeader = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            siteHeader.classList.add('scrolled');
+        } else {
+            siteHeader.classList.remove('scrolled');
+        }
+    }, { passive: true });
+
+    /* ==========================================================================
+       14. CARD ENTRANCE ANIMATION (IntersectionObserver)
+       ========================================================================== */
+    const cardEntranceStyle = document.createElement('style');
+    cardEntranceStyle.textContent = `
+        @keyframes cardFadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .product-card-807.card-visible {
+            animation: cardFadeUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+    `;
+    document.head.appendChild(cardEntranceStyle);
+
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationDelay = `${i * 0.06}s`;
+                entry.target.classList.add('card-visible');
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+
+    // Re-observe cards after each render
+    const originalRenderCatalog = renderCatalog;
+    function observeNewCards() {
+        document.querySelectorAll('.product-card-807:not(.card-visible)').forEach(card => {
+            cardObserver.observe(card);
+        });
+    }
+
+    // Observe initial render
+    setTimeout(observeNewCards, 0);
 });
