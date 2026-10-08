@@ -2236,3 +2236,1437 @@ img {
     gap: 6px;
     margin-bottom: 22px;
 }
+
+/* ==========================================================================
+   LEGO.COM DESIGN SYSTEM & INTERACTIVE FEATURES
+   ========================================================================== */
+
+/* SFX Sound Toggle in Top Bar */
+.sfx-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 3px 9px;
+    border-radius: var(--radius-full);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.sfx-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #FFFFFF;
+    color: var(--brand-yellow);
+}
+
+.sfx-toggle-btn.muted {
+    opacity: 0.6;
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.announcement-divider {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 4px;
+}
+
+/* LEGO Insiders VIP Sparks Pill in Header */
+.btn-insiders-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+    border: 1px solid #F59E0B;
+    color: #92400E;
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 1px 3px rgba(245, 158, 11, 0.12);
+}
+
+.btn-insiders-pill:hover {
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.25);
+}
+
+.insiders-star {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+/* Brick Lab Navigation Button */
+.nav-btn-brick-lab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    padding: 5px 12px;
+    border-radius: var(--radius-full);
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.nav-btn-brick-lab:hover {
+    background: #000000;
+    color: #FFFFFF;
+    border-color: #000000;
+}
+
+.brick-stud-ico {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.nav-micro-tag {
+    font-size: 0.6rem;
+    background: var(--brand-red);
+    color: #FFFFFF;
+    padding: 2px 6px;
+    border-radius: var(--radius-full);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Hero Virtual Brick Lab Button */
+.btn-lego-lab-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFD500;
+    color: #000000;
+    font-weight: 800;
+    font-size: 0.92rem;
+    padding: 14px 22px;
+    border-radius: var(--radius-xs);
+    border: 2px solid #E5BE00;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    box-shadow: 0 4px 12px rgba(255, 213, 0, 0.35);
+}
+
+.btn-lego-lab-hero:hover {
+    background: #FFDC24;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(255, 213, 0, 0.45);
+}
+
+.lego-stud-icon {
+    font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   LEGO.COM "SHOP BY AGE" FILTER BAR
+   ========================================================================== */
+.lego-age-filter-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: #F1F3F5;
+    border-radius: var(--radius-sm);
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+}
+
+.lego-age-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+}
+
+.lego-stud-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--brand-red);
+    border-radius: 50%;
+}
+
+.lego-age-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.age-pill-btn {
+    background: #FFFFFF;
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.age-pill-btn:hover {
+    border-color: #111827;
+    transform: translateY(-1px);
+}
+
+.age-pill-btn.active {
+    background: #111827;
+    color: #FFFFFF;
+    border-color: #111827;
+}
+
+.age-pill-adults.active {
+    background: #1E293B;
+    color: #F8FAFC;
+    border-color: #0F172A;
+}
+
+.adults-badge {
+    background: var(--brand-red);
+    color: #FFFFFF;
+    font-size: 0.65rem;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-weight: 800;
+    margin-right: 4px;
+}
+
+/* ==========================================================================
+   PRODUCT CARD LEGO SPECIFICATIONS & COMPARE BUTTON
+   ========================================================================== */
+.card-spec-strip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin: 6px 0 2px 0;
+}
+
+.card-spec-strip span strong {
+    color: var(--text-primary);
+}
+
+.card-spec-bullet {
+    color: #CBD5E1;
+}
+
+.card-compare-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-subtle);
+}
+
+.btn-card-compare {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    background: transparent;
+    padding: 4px 8px;
+    border-radius: var(--radius-xs);
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-card-compare:hover {
+    color: var(--brand-red);
+    border-color: var(--brand-red);
+    background: var(--brand-red-subtle);
+}
+
+.btn-card-compare.active {
+    background: #111827;
+    color: #FFFFFF;
+    border-color: #111827;
+}
+
+.compare-checkbox-box {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid currentColor;
+    border-radius: 2px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-card-compare.active .compare-checkbox-box {
+    background: var(--brand-green);
+    border-color: var(--brand-green);
+}
+
+/* ==========================================================================
+   PDP MODAL: LEGO 4-GRID SPEC DASHBOARD & 3D GUIDE
+   ========================================================================== */
+.lego-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 16px 0;
+    padding: 12px;
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+}
+
+.lego-spec-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3px;
+    border-right: 1px solid var(--border-subtle);
+}
+
+.lego-spec-box:last-child {
+    border-right: none;
+}
+
+.lego-spec-box .spec-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.lego-spec-box .spec-val {
+    font-size: 0.86rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.lego-spec-sparks .spec-val {
+    color: #D97706;
+}
+
+/* 3D Digital Instructions preview in PDP */
+.building-guide-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.guide-banner {
+    background: #EFF6FF;
+    border-left: 3px solid #3B82F6;
+    padding: 10px 14px;
+    border-radius: var(--radius-xs);
+}
+
+.guide-badge {
+    display: inline-block;
+    font-size: 0.64rem;
+    font-weight: 800;
+    color: #1D4ED8;
+    background: #DBEAFE;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-bottom: 4px;
+}
+
+.guide-banner p {
+    font-size: 0.8rem;
+    color: #1E40AF;
+    margin: 0;
+}
+
+.guide-steps-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.guide-step-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xs);
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.guide-step-card.active, .guide-step-card:hover {
+    border-color: var(--brand-red);
+    box-shadow: var(--shadow-subtle);
+}
+
+.guide-step-card .step-num {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--brand-red);
+}
+
+.guide-step-card .step-desc {
+    font-size: 0.74rem;
+    color: var(--text-secondary);
+    line-height: 1.3;
+}
+
+.btn-open-interactive-builder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #111827;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 10px 16px;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.btn-open-interactive-builder:hover {
+    background: #000000;
+}
+
+/* ==========================================================================
+   LEGO 3-TIER GIFT WITH PURCHASE (GWP) MILESTONE LADDER
+   ========================================================================== */
+.gwp-tier-meter-container {
+    padding: 16px 20px;
+    background: #F8FAFC;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.gwp-header-status {
+    font-size: 0.82rem;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+
+.gwp-header-status strong {
+    color: var(--brand-red);
+}
+
+.gwp-track-wrapper {
+    position: relative;
+    height: 6px;
+    background: #E2E8F0;
+    border-radius: 999px;
+    margin: 20px 10px 24px 10px;
+}
+
+.gwp-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #E60012 0%, #F59E0B 60%, #10B981 100%);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+.gwp-milestone-step {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+}
+
+.gwp-milestone-step:nth-child(2) { left: 33.3%; }
+.gwp-milestone-step:nth-child(3) { left: 66.6%; }
+.gwp-milestone-step:nth-child(4) { left: 100%; }
+
+.step-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gwp-milestone-step.unlocked .step-circle {
+    background: #10B981;
+    border-color: #059669;
+    color: #FFFFFF;
+    transform: scale(1.15);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+.step-label {
+    position: absolute;
+    top: 32px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.gwp-milestone-step.unlocked .step-label {
+    color: #059669;
+    font-weight: 800;
+}
+
+.gwp-unlocked-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 18px;
+}
+
+.gwp-gift-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #065F46;
+    background: #D1FAE5;
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
+}
+
+/* Free Gift items inside cart */
+.bag-item-card.gift-item {
+    background: #F0FDF4;
+    border: 1px dashed #86EFAC;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+}
+
+.gift-tag {
+    background: #10B981;
+    color: #FFFFFF;
+    font-size: 0.62rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+/* Insiders Sparks Redemption in Cart */
+.insiders-cart-redemption-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FEF3C7;
+    border: 1px solid #FCD34D;
+    padding: 10px 14px;
+    border-radius: var(--radius-xs);
+    margin-bottom: 12px;
+}
+
+.insiders-points-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.insiders-star-icon {
+    font-size: 1.2rem;
+}
+
+.insiders-calc-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.78rem;
+    color: #78350F;
+}
+
+.insiders-calc-text small {
+    color: #92400E;
+    font-size: 0.7rem;
+}
+
+.btn-redeem-sparks {
+    background: #D97706;
+    color: #FFFFFF;
+    border: none;
+    font-size: 0.76rem;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.btn-redeem-sparks:hover {
+    background: #B45309;
+}
+
+.btn-redeem-sparks.applied {
+    background: #10B981;
+}
+
+/* ==========================================================================
+   FLOATING SET COMPARISON BAR (LEGO.COM STYLE)
+   ========================================================================== */
+.compare-floating-bar {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 48px);
+    max-width: 850px;
+    background: #111827;
+    color: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    z-index: 4500;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+    animation: barSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes barSlideUp {
+    from { opacity: 0; transform: translate(-50%, 30px); }
+    to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.compare-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.compare-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.compare-badge-pill {
+    background: var(--brand-red);
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
+}
+
+.compare-bar-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.compare-thumbs-strip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.compare-thumb-mini {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-xs);
+    background: #FFFFFF;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.compare-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-compare-clear {
+    color: #9CA3AF;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.btn-compare-clear:hover {
+    color: #FFFFFF;
+}
+
+.btn-compare-launch {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #FFD500;
+    color: #000000;
+    font-size: 0.84rem;
+    font-weight: 800;
+    padding: 8px 16px;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-compare-launch:hover {
+    background: #FFDC24;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   SET COMPARISON MODAL TABLE
+   ========================================================================== */
+.compare-modal-box {
+    max-width: 980px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.compare-table-wrapper {
+    overflow-x: auto;
+    margin-top: 18px;
+}
+
+.compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.compare-table th, .compare-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 0.86rem;
+}
+
+.compare-table th {
+    background: var(--bg-canvas);
+    color: var(--text-secondary);
+    font-weight: 800;
+    width: 22%;
+}
+
+.compare-product-col {
+    text-align: center;
+    vertical-align: top;
+}
+
+.compare-col-img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    background: var(--bg-studio-grey);
+    border-radius: var(--radius-sm);
+    margin: 0 auto 10px auto;
+}
+
+.compare-col-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.compare-col-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--brand-red);
+    margin-bottom: 12px;
+}
+
+.btn-compare-buy {
+    width: 100%;
+    background: #111827;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border-radius: var(--radius-xs);
+    font-weight: 800;
+    font-size: 0.78rem;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.btn-compare-buy:hover {
+    background: var(--brand-red);
+}
+
+/* ==========================================================================
+   CHECKPOINT BRICK LAB & UNBOXING STUDIO MODAL
+   ========================================================================== */
+.brick-lab-modal-box {
+    max-width: 940px;
+    width: 95%;
+    max-height: 92vh;
+    overflow-y: auto;
+    background: #FFFFFF;
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.3);
+}
+
+.brick-lab-tabs-row {
+    display: flex;
+    gap: 8px;
+    border-bottom: 2px solid var(--border-subtle);
+    margin: 16px 0 20px 0;
+}
+
+.brick-tab-btn {
+    padding: 10px 18px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.brick-tab-btn:hover {
+    color: var(--text-primary);
+}
+
+.brick-tab-btn.active {
+    color: var(--brand-red);
+    border-bottom-color: var(--brand-red);
+}
+
+.brick-tab-content {
+    display: none;
+}
+
+.brick-tab-content.active {
+    display: block;
+}
+
+/* Builder Layout */
+.builder-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+}
+
+.builder-toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background: var(--bg-canvas);
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-subtle);
+}
+
+.tool-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tool-label {
+    font-size: 0.74rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.brick-color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.color-swatch-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform var(--transition-fast);
+}
+
+.color-swatch-btn:hover {
+    transform: scale(1.15);
+}
+
+.color-swatch-btn.active {
+    border-color: #111827;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 2px #FFFFFF inset;
+}
+
+.brick-type-selector {
+    display: flex;
+    gap: 6px;
+}
+
+.brick-type-btn {
+    flex: 1;
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    padding: 6px 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+}
+
+.brick-type-btn.active {
+    background: #111827;
+    color: #FFFFFF;
+    border-color: #111827;
+}
+
+.builder-presets-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.btn-preset-load {
+    background: #FFFFFF;
+    border: 1px solid var(--border-subtle);
+    padding: 6px 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    text-align: left;
+    transition: all var(--transition-fast);
+}
+
+.btn-preset-load:hover {
+    border-color: var(--brand-red);
+    color: var(--brand-red);
+}
+
+.builder-actions-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.btn-tool-outline {
+    background: #FFFFFF;
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 0.78rem;
+    padding: 8px 12px;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+}
+
+.btn-tool-outline:hover {
+    background: #F3F4F6;
+}
+
+.btn-tool-action {
+    background: var(--brand-red);
+    color: #FFFFFF;
+    border: none;
+    font-weight: 800;
+    font-size: 0.78rem;
+    padding: 9px 12px;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.btn-tool-action:hover {
+    background: var(--brand-red-hover);
+}
+
+/* Baseplate Canvas Grid with Realistic 3D Studs */
+.builder-stage {
+    background: #E5E7EB;
+    border: 2px solid #CBD5E1;
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.baseplate-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.baseplate-title {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.baseplate-hint {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+.lego-baseplate-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 42px);
+    grid-template-rows: repeat(8, 42px);
+    gap: 5px;
+    background: #94A3B8;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.baseplate-stud {
+    width: 42px;
+    height: 42px;
+    border-radius: 4px;
+    background: #CBD5E1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.1s ease;
+}
+
+.baseplate-stud::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 55%), inherit;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.baseplate-stud:hover {
+    transform: scale(1.06);
+    filter: brightness(1.1);
+}
+
+.baseplate-stud.has-brick {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.baseplate-stud.has-brick::before {
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.baseplate-footer-stats {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   MYSTERY BLIND BOX UNBOXER STAGE
+   ========================================================================== */
+.unboxer-stage {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.unboxer-card-box {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.unboxer-step-banner {
+    margin-bottom: 20px;
+}
+
+.unboxer-step-pill {
+    background: #E60012;
+    color: #FFFFFF;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+}
+
+.unboxer-card-box h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    margin: 8px 0 4px 0;
+}
+
+.unboxer-card-box p {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+}
+
+.mystery-box-interactive-wrap {
+    width: 220px;
+    height: 240px;
+    margin: 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
+}
+
+.mystery-foil-box {
+    width: 180px;
+    height: 220px;
+    background: linear-gradient(135deg, #FF0055 0%, #7928CA 50%, #0070F3 100%);
+    border-radius: var(--radius-md);
+    padding: 16px;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 16px 36px rgba(121, 40, 202, 0.45);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+@keyframes boxWiggle {
+    0% { transform: rotate(0deg) scale(1); }
+    20% { transform: rotate(-8deg) scale(1.05); }
+    40% { transform: rotate(8deg) scale(1.05); }
+    60% { transform: rotate(-6deg) scale(1.02); }
+    80% { transform: rotate(6deg) scale(1.02); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+.mystery-foil-box.shaking {
+    animation: boxWiggle 0.45s ease-in-out infinite;
+}
+
+.foil-badge {
+    font-size: 0.6rem;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    margin-bottom: 12px;
+}
+
+.box-mascot-icon {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.mystery-foil-box h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.8px;
+}
+
+.foil-sub {
+    font-size: 0.65rem;
+    opacity: 0.8;
+    margin-top: 4px;
+}
+
+/* Revealed Toy Card */
+.revealed-toy-card {
+    background: #FFFFFF;
+    border: 2px solid #F59E0B;
+    border-radius: var(--radius-md);
+    padding: 16px;
+    width: 240px;
+    box-shadow: 0 14px 34px rgba(245, 158, 11, 0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: cardPopIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardPopIn {
+    from { opacity: 0; transform: scale(0.6); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.revealed-rarity-badge {
+    background: #FEF3C7;
+    color: #92400E;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: var(--radius-full);
+    margin-bottom: 8px;
+}
+
+.revealed-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+}
+
+.revealed-toy-card h4 {
+    font-size: 0.92rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.revealed-toy-card p {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.secret-code-box {
+    background: #F1F5F9;
+    border: 1px dashed #64748B;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.secret-code-box strong {
+    color: var(--brand-red);
+    display: block;
+    font-size: 0.82rem;
+}
+
+.btn-claim-chaser {
+    width: 100%;
+    background: #111827;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 0.76rem;
+    padding: 8px;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+}
+
+.btn-claim-chaser:hover {
+    background: var(--brand-red);
+}
+
+.unboxer-actions-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.btn-unbox-action {
+    background: #111827;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 0.84rem;
+    padding: 10px 18px;
+    border-radius: var(--radius-xs);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-unbox-action:hover:not(:disabled) {
+    background: #000000;
+    transform: translateY(-1px);
+}
+
+.btn-unbox-action:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.btn-rip-action {
+    background: var(--brand-red);
+}
+
+.btn-rip-action:hover:not(:disabled) {
+    background: var(--brand-red-hover);
+}
+
+/* ==========================================================================
+   INSIDERS REWARDS PROGRAM MODAL
+   ========================================================================== */
+.insiders-modal-box {
+    max-width: 480px;
+}
+
+.insiders-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 14px;
+}
+
+.insiders-balance-card {
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+    color: #FFFFFF;
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    text-align: center;
+}
+
+.insiders-tier-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(245, 158, 11, 0.2);
+    color: #FBBF24;
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    margin-bottom: 8px;
+}
+
+.insiders-balance-num {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.insiders-pts {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #FBBF24;
+}
+
+.insiders-unit {
+    font-size: 0.9rem;
+    color: #94A3B8;
+}
+
+.insiders-worth {
+    font-size: 0.82rem;
+    color: #CBD5E1;
+}
+
+.insiders-perks-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.perk-box {
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xs);
+    padding: 10px 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.perk-icon {
+    font-size: 1.2rem;
+}
+
+.perk-box strong {
+    font-size: 0.74rem;
+    color: var(--text-primary);
+}
+
+.perk-box small {
+    font-size: 0.66rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+}
+
+.insiders-vouchers-section h4 {
+    font-size: 0.86rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.voucher-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xs);
+    margin-bottom: 8px;
+}
+
+.voucher-info strong {
+    font-size: 0.84rem;
+    display: block;
+}
+
+.voucher-info small {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.btn-redeem-voucher {
+    background: #111827;
+    color: #FFFFFF;
+    font-size: 0.74rem;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.btn-redeem-voucher:hover {
+    background: var(--brand-red);
+}
+
+/* Responsiveness tweaks */
+@media (max-width: 768px) {
+    .builder-layout {
+        grid-template-columns: 1fr;
+    }
+    .lego-baseplate-grid {
+        grid-template-columns: repeat(8, 34px);
+        grid-template-rows: repeat(8, 34px);
+    }
+    .baseplate-stud {
+        width: 34px;
+        height: 34px;
+    }
+    .lego-spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .lego-spec-box:nth-child(2) {
+        border-right: none;
+    }
+    .compare-floating-bar {
+        width: calc(100% - 24px);
+    }
+}

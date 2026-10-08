@@ -22,9 +22,19 @@
     <!-- Top Announcement Bar -->
     <div class="top-announcement-bar">
         <div class="announcement-content">
-            <span class="announcement-text">FREE SHIPPING ON ALL ORDERS OVER $80 • 100% SAFE & CERTIFIED TOYS</span>
+            <div class="announcement-marquee-wrap">
+                <div class="announcement-marquee-track">
+                    <span class="announcement-text">✨ LEGO® INSIDERS DOUBLE SPARKS WEEKEND • 🚚 FREE SHIPPING OVER $80 • 🎁 FREE MYSTERY GIFTS AT $40 & $120 • 🧱 100% NON-TOXIC & CERTIFIED</span>
+                    <span class="announcement-text">✨ LEGO® INSIDERS DOUBLE SPARKS WEEKEND • 🚚 FREE SHIPPING OVER $80 • 🎁 FREE MYSTERY GIFTS AT $40 & $120 • 🧱 100% NON-TOXIC & CERTIFIED</span>
+                </div>
+            </div>
             <div class="announcement-right">
-                <span class="announcement-timer-label">SECRET DROP CLOSES IN:</span>
+                <button id="sfx-toggle-btn" class="sfx-toggle-btn" aria-label="Toggle Sound Effects" title="Tactile Brick Sound Effects">
+                    <span id="sfx-icon">🔊</span>
+                    <span id="sfx-label">SFX: ON</span>
+                </button>
+                <div class="announcement-divider">|</div>
+                <span class="announcement-timer-label">SECRET DROP:</span>
                 <span class="announcement-timer" id="countdown-timer">05:42:19</span>
             </div>
         </div>
@@ -68,10 +78,21 @@
                 <a href="#catalog" class="nav-link" data-nav="tech">ROBOTS & TECH</a>
                 <a href="#catalog" class="nav-link" data-nav="puzzles">BUILDING SETS</a>
                 <a href="#collabs" class="nav-link">EXCLUSIVE DROPS</a>
+                <button type="button" class="nav-link nav-btn-brick-lab" id="open-brick-lab-nav-btn">
+                    <span class="brick-stud-ico">🧱</span>
+                    <span>BRICK LAB</span>
+                    <span class="nav-micro-tag">INTERACTIVE</span>
+                </button>
             </nav>
 
-            <!-- Header Action Icons (Cart, Wishlist, Login) -->
+            <!-- Header Action Icons (Cart, Wishlist, Insiders, Login) -->
             <div class="header-user-actions">
+                <!-- LEGO-style Insiders Rewards Button -->
+                <button id="insiders-toggle-btn" class="btn-insiders-pill" aria-label="LEGO Insiders Rewards Program" title="CheckPoint Insiders Rewards">
+                    <span class="insiders-star">⭐</span>
+                    <span class="insiders-text"><strong id="header-sparks-count">350</strong> Sparks</span>
+                </button>
+
                 <!-- Cart Trigger Button -->
                 <button id="cart-toggle-btn" class="icon-action-btn" aria-label="Shopping Bag">
                     <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -147,6 +168,10 @@
                     <a href="#collabs" class="btn-ghost-hero">
                         <span>Exclusive Drops</span>
                     </a>
+                    <button type="button" id="hero-brick-lab-btn" class="btn-lego-lab-hero">
+                        <span class="lego-stud-icon">🧱</span>
+                        <span>Virtual Brick Lab & Unboxer</span>
+                    </button>
                 </div>
 
                 <!-- Commercial Feature Bar -->
@@ -240,6 +265,24 @@
                     <div class="catalog-title-group">
                         <span class="sub-eyebrow">CURATED COLLECTION</span>
                         <h2 class="title-bold">Featured Kid Toys & Collectibles</h2>
+                    </div>
+
+                    <!-- LEGO.com Style "Shop by Age" Filter Strip -->
+                    <div class="lego-age-filter-strip">
+                        <div class="lego-age-title">
+                            <span class="lego-stud-dot"></span>
+                            <span>SHOP BY AGE:</span>
+                        </div>
+                        <div class="lego-age-pills" id="age-pills" role="tablist">
+                            <button class="age-pill-btn active" data-age="all" role="tab">All Ages</button>
+                            <button class="age-pill-btn" data-age="3+" role="tab">Ages 3+</button>
+                            <button class="age-pill-btn" data-age="6+" role="tab">Ages 6+</button>
+                            <button class="age-pill-btn" data-age="8+" role="tab">Ages 8+</button>
+                            <button class="age-pill-btn" data-age="12+" role="tab">Ages 12+</button>
+                            <button class="age-pill-btn age-pill-adults" data-age="18+" role="tab">
+                                <span class="adults-badge">18+</span> Adults Welcome
+                            </button>
+                        </div>
                     </div>
 
                     <!-- Filter Pills Row -->
@@ -452,6 +495,26 @@
                     <h2 id="pdp-title" class="pdp-title">Toy Name</h2>
                     <div id="pdp-price" class="pdp-price">$0.00</div>
 
+                    <!-- LEGO 4-Grid Set Specification Badges -->
+                    <div class="lego-spec-grid">
+                        <div class="lego-spec-box">
+                            <span class="spec-label">Ages</span>
+                            <strong id="pdp-spec-age" class="spec-val">8+</strong>
+                        </div>
+                        <div class="lego-spec-box">
+                            <span class="spec-label">Pieces</span>
+                            <strong id="pdp-spec-pieces" class="spec-val">1,000 pcs</strong>
+                        </div>
+                        <div class="lego-spec-box">
+                            <span class="spec-label">Item #</span>
+                            <strong id="pdp-spec-item" class="spec-val">#CP-10001</strong>
+                        </div>
+                        <div class="lego-spec-box lego-spec-sparks">
+                            <span class="spec-label">Insiders</span>
+                            <strong id="pdp-spec-sparks" class="spec-val">⭐ 450 pts</strong>
+                        </div>
+                    </div>
+
                     <!-- Color / Variant Selector -->
                     <div class="pdp-option-group">
                         <div class="pdp-option-label">Select Color / Edition</div>
@@ -496,6 +559,39 @@
                             <div class="pdp-accordion-content">
                                 Certified 100% child-safe, non-toxic, and free of BPA, phthalates, and lead. Tested to
                                 rigorous ASTM F963 and EN71 toy safety standards.
+                            </div>
+                        </details>
+
+                        <details class="pdp-accordion">
+                            <summary class="pdp-accordion-header">
+                                <span>Digital Building Guide & 3D Instructions</span>
+                                <span class="accordion-arrow">+</span>
+                            </summary>
+                            <div class="pdp-accordion-content">
+                                <div class="building-guide-preview">
+                                    <div class="guide-banner">
+                                        <span class="guide-badge">3D INTERACTIVE BUILDER</span>
+                                        <p>Interactive 3D assembly instructions compatible with CheckPoint Builder app & PDF download.</p>
+                                    </div>
+                                    <div class="guide-steps-row">
+                                        <div class="guide-step-card active">
+                                            <span class="step-num">Step 1</span>
+                                            <span class="step-desc">Unpack & inspect components</span>
+                                        </div>
+                                        <div class="guide-step-card">
+                                            <span class="step-num">Step 2</span>
+                                            <span class="step-desc">Assemble articulated chassis</span>
+                                        </div>
+                                        <div class="guide-step-card">
+                                            <span class="step-num">Step 3</span>
+                                            <span class="step-desc">Lock display pedestal & accessories</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn-open-interactive-builder" id="pdp-try-builder-btn">
+                                        <span>Launch Interactive 3D Brick Lab</span>
+                                        <svg class="icon-svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                                    </button>
+                                </div>
                             </div>
                         </details>
 
@@ -654,13 +750,29 @@
             </button>
         </div>
 
-        <!-- Free Shipping Progress -->
-        <div class="shipping-threshold-box">
-            <div class="shipping-text" id="shipping-progress-text">
-                Add <strong>$80.00</strong> more to qualify for <strong>FREE Express Shipping</strong>
+        <!-- LEGO 3-Tier Gift with Purchase (GWP) Milestone Ladder -->
+        <div class="gwp-tier-meter-container">
+            <div class="gwp-header-status" id="gwp-status-text">
+                Add <strong>$40.00</strong> more to unlock <strong>Free Mystery Polybag</strong>!
             </div>
-            <div class="progress-bar-track">
-                <div class="progress-bar-fill" id="shipping-progress-bar" style="width: 0%;"></div>
+            <div class="gwp-track-wrapper">
+                <div class="gwp-progress-fill" id="gwp-progress-bar" style="width: 0%;"></div>
+                <div class="gwp-milestone-step" id="gwp-step-1" data-tier="40">
+                    <div class="step-circle" title="Tier 1: Free Mystery Polybag ($40)">🎁</div>
+                    <span class="step-label">$40 Polybag</span>
+                </div>
+                <div class="gwp-milestone-step" id="gwp-step-2" data-tier="80">
+                    <div class="step-circle" title="Tier 2: Free Express Courier ($80)">🚚</div>
+                    <span class="step-label">$80 Free Ship</span>
+                </div>
+                <div class="gwp-milestone-step" id="gwp-step-3" data-tier="120">
+                    <div class="step-circle" title="Tier 3: Free Collector Gold Trophy ($120)">🏆</div>
+                    <span class="step-label">$120 Trophy</span>
+                </div>
+            </div>
+            <!-- Dynamic Gift Badges container -->
+            <div class="gwp-unlocked-badges" id="gwp-unlocked-badges">
+                <!-- Dynamically filled with unlocked free rewards -->
             </div>
         </div>
 
@@ -684,6 +796,20 @@
 
         <!-- Drawer Footer -->
         <div class="drawer-footer" id="drawer-footer">
+            <!-- LEGO Insiders Rewards Sparks Redemption Box -->
+            <div class="insiders-cart-redemption-box">
+                <div class="insiders-points-info">
+                    <span class="insiders-star-icon">⭐</span>
+                    <div class="insiders-calc-text">
+                        <span>Earn <strong id="cart-earned-sparks">+0</strong> Sparks</span>
+                        <small>Balance: <span id="cart-current-balance">350</span> Sparks</small>
+                    </div>
+                </div>
+                <button type="button" id="redeem-sparks-btn" class="btn-redeem-sparks">
+                    Redeem 200 pts (-$5.00)
+                </button>
+            </div>
+
             <div class="coupon-field-row">
                 <input type="text" id="coupon-input" placeholder="Promo code (try CHECKPOINT10)"
                     aria-label="Promo code">
@@ -699,6 +825,10 @@
                 <div class="summary-line discount-highlight" id="drawer-discount-row" style="display: none;">
                     <span>VIP Member Discount</span>
                     <span id="drawer-discount">-$0.00</span>
+                </div>
+                <div class="summary-line discount-highlight" id="drawer-sparks-discount-row" style="display: none;">
+                    <span>Insiders Sparks Redeemed</span>
+                    <span id="drawer-sparks-discount">-$5.00</span>
                 </div>
                 <div class="summary-line">
                     <span>Estimated Shipping</span>
@@ -844,6 +974,268 @@
             </div>
 
             <button class="btn-action-dark" id="success-continue-btn">Continue Browsing Toys</button>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         FLOATING SET COMPARISON BAR (LEGO.COM STYLE)
+         ========================================================================== -->
+    <div id="compare-floating-bar" class="compare-floating-bar" style="display: none;" aria-live="polite">
+        <div class="compare-bar-container">
+            <div class="compare-bar-left">
+                <span class="compare-badge-pill" id="compare-count-badge">0 / 3</span>
+                <span class="compare-bar-title">Sets Selected for Comparison</span>
+                <div class="compare-thumbs-strip" id="compare-thumbs-strip">
+                    <!-- Dynamic mini thumbs -->
+                </div>
+            </div>
+            <div class="compare-bar-right">
+                <button id="clear-compare-btn" class="btn-compare-clear">Clear</button>
+                <button id="launch-compare-btn" class="btn-compare-launch">
+                    <span>Compare Sets</span>
+                    <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         SET COMPARISON MODAL (LEGO.COM SPEC SHEET COMPARISON)
+         ========================================================================== -->
+    <div id="compare-modal-overlay" class="modal-backdrop" aria-hidden="true">
+        <div class="compare-modal-box" role="dialog" aria-modal="true">
+            <div class="modal-top-bar">
+                <div>
+                    <span class="modal-kicker">LEGO-STYLE PRODUCT COMPARISON</span>
+                    <h2>Compare Toy Sets</h2>
+                </div>
+                <button id="close-compare-btn" class="modal-close-trigger" aria-label="Close comparison">
+                    <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="compare-table-wrapper" id="compare-table-wrapper">
+                <!-- Dynamically rendered comparative matrix -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         CHECKPOINT BRICK LAB & MYSTERY UNBOXING STUDIO (INTERACTIVE PLAYGROUND)
+         ========================================================================== -->
+    <div id="brick-lab-modal-overlay" class="modal-backdrop" aria-hidden="true">
+        <div class="brick-lab-modal-box" role="dialog" aria-modal="true">
+            <div class="modal-top-bar">
+                <div class="brick-lab-header-title">
+                    <span class="modal-kicker">CHECKPOINT CREATIVE LAB</span>
+                    <h2>Brick Studio & Unboxing Lab</h2>
+                </div>
+                <button id="close-brick-lab-btn" class="modal-close-trigger" aria-label="Close Brick Lab">
+                    <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Tab Switcher -->
+            <div class="brick-lab-tabs-row" role="tablist">
+                <button class="brick-tab-btn active" id="tab-builder-btn" role="tab">
+                    <span>🧱 Virtual Brick Builder</span>
+                </button>
+                <button class="brick-tab-btn" id="tab-unboxer-btn" role="tab">
+                    <span>✨ Mystery Blind Box Unboxer</span>
+                </button>
+            </div>
+
+            <!-- TAB 1: Virtual LEGO Brick Builder -->
+            <div class="brick-tab-content active" id="brick-builder-panel">
+                <div class="builder-layout">
+                    <!-- Builder Controls Sidebar -->
+                    <div class="builder-toolbar">
+                        <div class="tool-section">
+                            <label class="tool-label">1. Select Brick Color:</label>
+                            <div class="brick-color-palette" id="brick-color-palette">
+                                <button class="color-swatch-btn active" data-color="#E60012" style="background:#E60012;" title="LEGO Red"></button>
+                                <button class="color-swatch-btn" data-color="#FFC400" style="background:#FFC400;" title="Classic Yellow"></button>
+                                <button class="color-swatch-btn" data-color="#0066CC" style="background:#0066CC;" title="Royal Blue"></button>
+                                <button class="color-swatch-btn" data-color="#00A859" style="background:#00A859;" title="Forest Green"></button>
+                                <button class="color-swatch-btn" data-color="#FFFFFF" style="background:#FFFFFF; border:1px solid #ccc;" title="Pure White"></button>
+                                <button class="color-swatch-btn" data-color="#1E293B" style="background:#1E293B;" title="Midnight Dark"></button>
+                                <button class="color-swatch-btn" data-color="#F59E0B" style="background:#F59E0B;" title="Metallic Gold"></button>
+                            </div>
+                        </div>
+
+                        <div class="tool-section">
+                            <label class="tool-label">2. Brick Type:</label>
+                            <div class="brick-type-selector">
+                                <button class="brick-type-btn active" data-type="1x1">1×1 Stud</button>
+                                <button class="brick-type-btn" data-type="2x2">2×2 Block</button>
+                                <button class="brick-type-btn" data-type="2x4">2×4 Classic</button>
+                            </div>
+                        </div>
+
+                        <div class="tool-section">
+                            <label class="tool-label">3. Cool Presets:</label>
+                            <div class="builder-presets-row">
+                                <button class="btn-preset-load" data-preset="castle">🏰 Castle Tower</button>
+                                <button class="btn-preset-load" data-preset="robot">🤖 Retro Bot</button>
+                                <button class="btn-preset-load" data-preset="duck">🦆 Classic Duck</button>
+                                <button class="btn-preset-load" data-preset="heart">❤️ Pixel Heart</button>
+                            </div>
+                        </div>
+
+                        <div class="builder-actions-col">
+                            <button id="clear-builder-btn" class="btn-tool-outline">Clear Baseplate</button>
+                            <button id="add-custom-set-btn" class="btn-tool-action">Add 100-Brick Mix to Bag ($14.99)</button>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Stud Baseplate Canvas -->
+                    <div class="builder-stage">
+                        <div class="baseplate-header">
+                            <span class="baseplate-title">32-Stud Studio Baseplate</span>
+                            <span class="baseplate-hint">Click any stud to snap a brick with sound!</span>
+                        </div>
+                        <div class="lego-baseplate-grid" id="lego-baseplate-grid">
+                            <!-- 8x8 Grid of tactile studs rendered dynamically -->
+                        </div>
+                        <div class="baseplate-footer-stats">
+                            <span>Placed Bricks: <strong id="builder-brick-count">0</strong></span>
+                            <span>Sound: <strong id="builder-sfx-status">Tactile Mechanical Snap</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Mystery Blind Box Unboxer -->
+            <div class="brick-tab-content" id="brick-unboxer-panel">
+                <div class="unboxer-stage">
+                    <div class="unboxer-card-box">
+                        <div class="unboxer-step-banner">
+                            <span class="unboxer-step-pill" id="unboxer-step-pill">STEP 1: SHAKE BOX</span>
+                            <h3 id="unboxer-title-text">Mystery Art Toy Foil Capsule</h3>
+                            <p id="unboxer-sub-text">Test your collector luck for 1/72 secret chase figures and VIP discount keys.</p>
+                        </div>
+
+                        <!-- 3D Interactive Box Container -->
+                        <div class="mystery-box-interactive-wrap" id="mystery-box-interactive-wrap">
+                            <div class="mystery-foil-box" id="mystery-foil-box">
+                                <div class="box-front-graphic">
+                                    <span class="foil-badge">CHECKPOINT EXCLUSIVE</span>
+                                    <div class="box-mascot-icon">🐰</div>
+                                    <h4>SECRET CHASER</h4>
+                                    <span class="foil-sub">SERIES 01 • BLIND PACK</span>
+                                </div>
+                            </div>
+
+                            <!-- Revealed Figurine Showcase -->
+                            <div class="revealed-toy-card" id="revealed-toy-card" style="display: none;">
+                                <div class="revealed-rarity-badge" id="revealed-rarity">🌟 ULTRA RARE CHASER (1/144)</div>
+                                <img id="revealed-toy-img" src="images/astro_bunny_front.jpg" alt="Secret Toy" class="revealed-img">
+                                <h4 id="revealed-toy-name">Golden Celestial AstroBunny</h4>
+                                <p id="revealed-toy-desc">Pearlescent astronaut edition with metallic gold antenna and collectors foil card.</p>
+                                <div class="secret-code-box">
+                                    <span>UNLOCKED PROMO CODE:</span>
+                                    <strong id="revealed-promo-code">CHASER20 (20% OFF)</strong>
+                                </div>
+                                <button id="apply-chaser-code-btn" class="btn-claim-chaser">
+                                    <span>Copy Code & Apply to Cart</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons for Unboxing Flow -->
+                        <div class="unboxer-actions-row">
+                            <button id="btn-shake-box" class="btn-unbox-action">
+                                <span>👋 Shake Box (Listen Inside)</span>
+                            </button>
+                            <button id="btn-rip-foil" class="btn-unbox-action btn-rip-action" disabled>
+                                <span>✂️ Tear Foil Seal & Reveal</span>
+                            </button>
+                            <button id="btn-reset-unbox" class="btn-tool-outline" style="display: none;">
+                                <span>🔄 Try Another Blind Box</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         LEGO INSIDERS REWARDS PROGRAM MODAL
+         ========================================================================== -->
+    <div id="insiders-modal-overlay" class="modal-backdrop" aria-hidden="true">
+        <div class="checkout-modal-box insiders-modal-box" role="dialog" aria-modal="true">
+            <div class="modal-top-bar">
+                <div>
+                    <span class="modal-kicker">VIP MEMBERSHIP</span>
+                    <h2>CheckPoint Insiders Rewards</h2>
+                </div>
+                <button id="close-insiders-btn" class="modal-close-trigger" aria-label="Close modal">
+                    <svg class="icon-svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="insiders-modal-body">
+                <!-- User Balance Card -->
+                <div class="insiders-balance-card">
+                    <div class="insiders-tier-badge">
+                        <span class="tier-crown">👑</span>
+                        <span>GOLD MASTER BUILDER</span>
+                    </div>
+                    <div class="insiders-balance-num">
+                        <span class="insiders-pts" id="insiders-modal-points">350</span>
+                        <span class="insiders-unit">Sparks Points</span>
+                    </div>
+                    <p class="insiders-worth">Worth <strong>$8.75 in cash savings</strong> on your next toy order.</p>
+                </div>
+
+                <!-- How it works -->
+                <div class="insiders-perks-grid">
+                    <div class="perk-box">
+                        <span class="perk-icon">⚡</span>
+                        <strong>10 Sparks / $1</strong>
+                        <small>Earn on every verified toy or brick order</small>
+                    </div>
+                    <div class="perk-box">
+                        <span class="perk-icon">🎁</span>
+                        <strong>GWP Access</strong>
+                        <small>Unlock exclusive limited gifts with purchase</small>
+                    </div>
+                    <div class="perk-box">
+                        <span class="perk-icon">🎟️</span>
+                        <strong>Early Drop Access</strong>
+                        <small>Reserve secret chasers before public drops</small>
+                    </div>
+                </div>
+
+                <!-- Instant Rewards Vouchers -->
+                <div class="insiders-vouchers-section">
+                    <h4>Redeemable Vouchers</h4>
+                    <div class="voucher-card">
+                        <div class="voucher-info">
+                            <strong>$5.00 Off Voucher</strong>
+                            <small>Requires 200 Sparks</small>
+                        </div>
+                        <button class="btn-redeem-voucher" data-cost="200" data-val="5">Redeem</button>
+                    </div>
+                    <div class="voucher-card">
+                        <div class="voucher-info">
+                            <strong>$10.00 Off Voucher</strong>
+                            <small>Requires 400 Sparks</small>
+                        </div>
+                        <button class="btn-redeem-voucher" data-cost="400" data-val="10">Redeem</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

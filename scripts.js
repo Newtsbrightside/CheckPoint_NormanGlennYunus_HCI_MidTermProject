@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 38.00,
             unitLabel: 'Official CheckPoint Exclusive',
             rating: 5.0,
+            age: '8+',
+            ageNum: 8,
+            pieces: '1 pc Figure + Stand',
+            itemNumber: '#CP-76419',
+            sparks: 380,
+            dimensions: '14cm × 9cm × 8cm',
+            difficulty: 'Collector Series',
             images: [
                 'images/astro_bunny_front.jpg',
                 'images/astro_bunny_closeup.jpg',
@@ -38,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 64.00,
             unitLabel: 'Articulated Desktop Robot',
             rating: 4.9,
+            age: '10+',
+            ageNum: 10,
+            pieces: '120 pcs Articulated',
+            itemNumber: '#CP-80102',
+            sparks: 640,
+            dimensions: '16cm × 11cm × 8cm',
+            difficulty: 'Intermediate',
             images: [
                 'images/robot_front.jpg',
                 'images/robot_closeup.jpg',
@@ -57,6 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 34.50,
             unitLabel: 'Licensed Nintendo Collector Trio',
             rating: 5.0,
+            age: '6+',
+            ageNum: 6,
+            pieces: '3 Figures Trio',
+            itemNumber: '#CP-55209',
+            sparks: 345,
+            dimensions: '9cm × 6cm × 5cm (each)',
+            difficulty: 'All Ages',
             images: [
                 'images/mario_trio_full.jpg',
                 'images/mario_closeup.jpg',
@@ -76,6 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 49.99,
             unitLabel: 'Obstacle Sensing Stunt Drone',
             rating: 4.9,
+            age: '12+',
+            ageNum: 12,
+            pieces: '18 pcs Stunt Kit',
+            itemNumber: '#CP-91040',
+            sparks: 500,
+            dimensions: '12cm × 12cm × 4cm',
+            difficulty: 'Advanced Tech',
             images: [
                 'images/drone_front.jpg',
                 'images/drone_angle.jpg',
@@ -95,6 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 45.00,
             unitLabel: '1,000 Precision Interlocking Bricks',
             rating: 5.0,
+            age: '8+',
+            ageNum: 8,
+            pieces: '1,000 pcs Bricks',
+            itemNumber: '#CP-10001',
+            sparks: 450,
+            dimensions: '28cm × 20cm Tub',
+            difficulty: 'Master Builder',
             images: [
                 'images/lego_brick_castle.jpg',
                 'images/lego_brick_details.jpg',
@@ -114,6 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 39.00,
             unitLabel: 'Solid Natural Beechwood Toy',
             rating: 5.0,
+            age: '3+',
+            ageNum: 3,
+            pieces: '36 Beechwood Blocks',
+            itemNumber: '#CP-20412',
+            sparks: 390,
+            dimensions: '45cm × 10cm × 8cm',
+            difficulty: 'Early Childhood',
             images: [
                 'images/wooden_blocks_train.jpg',
                 'images/wooden_blocks_closeup.jpg',
@@ -133,6 +175,13 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 29.50,
             unitLabel: 'Hypoallergenic Velvet Plush',
             rating: 4.9,
+            age: '3+',
+            ageNum: 3,
+            pieces: '1 pc Velvet Plush',
+            itemNumber: '#CP-30515',
+            sparks: 295,
+            dimensions: '35cm / 65cm Seated',
+            difficulty: 'All Ages',
             images: [
                 'images/plush_bear_front.jpg',
                 'images/plush_bear_closeup.jpg',
@@ -152,6 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
             price: 42.00,
             unitLabel: 'Posable Art Toy Figure',
             rating: 4.8,
+            age: '18+',
+            ageNum: 18,
+            isAdultsWelcome: true,
+            pieces: '180 pcs Posable Mech',
+            itemNumber: '#CP-60882',
+            sparks: 420,
+            dimensions: '18cm × 12cm × 9cm',
+            difficulty: 'Adults 18+ Display',
             images: [
                 'images/robot_figure_front.jpg',
                 'images/robot_figure_closeup.jpg',
@@ -161,6 +218,32 @@ document.addEventListener('DOMContentLoaded', () => {
             sizes: ['Standard Figure (15cm)', 'Collector Deluxe (with Acrylic Display Pod)'],
             sizeLabel: 'Select Packaging / Edition',
             description: 'Fully articulated collector mech figure featuring 16 points of ratcheted articulation, interchangeable tactical hand grips, magnetized energy shield, and serialized collector card.'
+        },
+        {
+            id: 99,
+            name: 'CheckPoint Studio 100-Brick Creator Color Tub',
+            category: 'puzzles',
+            tag: 'exclusive',
+            tagLabel: 'LAB EXCLUSIVE',
+            price: 14.99,
+            unitLabel: 'Custom Creator Brick Selection',
+            rating: 5.0,
+            age: '6+',
+            ageNum: 6,
+            pieces: '100 pcs Studs & Bricks',
+            itemNumber: '#CP-00100',
+            sparks: 150,
+            dimensions: '15cm × 15cm Tub',
+            difficulty: 'Creative Sandbox',
+            images: [
+                'images/lego_brick_details.jpg',
+                'images/lego_brick_flatlay.jpg',
+                'images/lego_brick_castle.jpg'
+            ],
+            colors: ['Creative Rainbow Mix', 'Monochrome Studio', 'Warm Sunset'],
+            sizes: ['100 Bricks Compact Tub', '250 Bricks Deluxe Bucket'],
+            sizeLabel: 'Select Brick Quantity',
+            description: 'Custom curated vibrant builder tub containing premium precision-machined interlocking ABS plastic bricks compatible with all standard building systems.'
         }
     ];
 
@@ -172,12 +255,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const DISCOUNT_CODES = {
         'CHECKPOINT10': 0.10,
         'ILOVECHECKPOINT': 0.15,
-        '807GARAGE': 0.12
+        '807GARAGE': 0.12,
+        'CHASER20': 0.20,
+        'VIPSPARKS': 0.15
     };
 
     let cart = loadStorage('checkpoint_cart_items', []);
     let wishlist = loadStorage('checkpoint_wishlist_items', []);
     let currentUser = loadStorage('checkpoint_auth_user', null);
+    let sfxEnabled = loadStorage('checkpoint_sfx_enabled', true);
+    let insidersSparks = loadStorage('checkpoint_insiders_sparks', 350);
+    let isSparksRedeemed = false;
+    let comparedProducts = [];
 
     // Sanitize any legacy cart or wishlist items from localStorage
     cart = cart.filter(item => PRODUCTS.some(p => p.id === item.id && p.name === item.name));
@@ -186,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
     saveStorage('checkpoint_wishlist_items', wishlist);
 
     let activeCategory = 'all';
+    let activeAge = 'all';
     let activeQuery = '';
     let activeSort = 'featured';
     let currentDiscountRate = 0;
@@ -215,11 +305,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const noProductsMsg = document.getElementById('no-products-msg');
     const resetFiltersBtn = document.getElementById('reset-filters-btn');
     const categoryPills = document.querySelectorAll('.pill-button');
+    const agePills = document.querySelectorAll('.age-pill-btn');
     const catalogSearch = document.getElementById('catalog-search');
     const clearSearchBtn = document.getElementById('clear-search-btn');
     const sortSelect = document.getElementById('sort-select');
     const quickSearchInput = document.getElementById('quick-search-input');
     const navLinks = document.querySelectorAll('.nav-link');
+
+    // SFX Toggle
+    const sfxToggleBtn = document.getElementById('sfx-toggle-btn');
+    const sfxIcon = document.getElementById('sfx-icon');
+    const sfxLabel = document.getElementById('sfx-label');
 
     // Header Actions
     const cartBadge = document.getElementById('cart-badge');
@@ -228,6 +324,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const wishlistToggleBtn = document.getElementById('wishlist-toggle-btn');
     const loginModalBtn = document.getElementById('login-modal-btn');
     const userDisplayLabel = document.getElementById('user-display-label');
+    const insidersToggleBtn = document.getElementById('insiders-toggle-btn');
+    const headerSparksCount = document.getElementById('header-sparks-count');
+    const openBrickLabNavBtn = document.getElementById('open-brick-lab-nav-btn');
+    const heroBrickLabBtn = document.getElementById('hero-brick-lab-btn');
 
     // Cart Drawer Elements
     const cartDrawer = document.getElementById('cart-drawer');
@@ -241,14 +341,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const drawerShipping = document.getElementById('drawer-shipping');
     const drawerDiscountRow = document.getElementById('drawer-discount-row');
     const drawerDiscount = document.getElementById('drawer-discount');
+    const drawerSparksDiscountRow = document.getElementById('drawer-sparks-discount-row');
+    const drawerSparksDiscount = document.getElementById('drawer-sparks-discount');
     const drawerTotal = document.getElementById('drawer-total');
-    const shippingProgressBar = document.getElementById('shipping-progress-bar');
-    const shippingProgressText = document.getElementById('shipping-progress-text');
     const couponInput = document.getElementById('coupon-input');
     const applyCouponBtn = document.getElementById('apply-coupon-btn');
     const couponFeedback = document.getElementById('coupon-feedback');
     const triggerCheckoutBtn = document.getElementById('trigger-checkout-btn');
     const startShoppingBtn = document.getElementById('start-shopping-btn');
+
+    // LEGO GWP Tier Ladder & Sparks Redemption Elements
+    const gwpProgressBar = document.getElementById('gwp-progress-bar');
+    const gwpStatusText = document.getElementById('gwp-status-text');
+    const gwpStep1 = document.getElementById('gwp-step-1');
+    const gwpStep2 = document.getElementById('gwp-step-2');
+    const gwpStep3 = document.getElementById('gwp-step-3');
+    const gwpUnlockedBadges = document.getElementById('gwp-unlocked-badges');
+    const cartEarnedSparks = document.getElementById('cart-earned-sparks');
+    const cartCurrentBalance = document.getElementById('cart-current-balance');
+    const redeemSparksBtn = document.getElementById('redeem-sparks-btn');
 
     // Wishlist Drawer Elements
     const wishlistDrawer = document.getElementById('wishlist-drawer');
@@ -268,6 +379,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const pdpTitleCrumb = document.getElementById('pdp-title-crumb');
     const pdpTitle = document.getElementById('pdp-title');
     const pdpPrice = document.getElementById('pdp-price');
+    const pdpSpecAge = document.getElementById('pdp-spec-age');
+    const pdpSpecPieces = document.getElementById('pdp-spec-pieces');
+    const pdpSpecItem = document.getElementById('pdp-spec-item');
+    const pdpSpecSparks = document.getElementById('pdp-spec-sparks');
     const pdpColorOptions = document.getElementById('pdp-color-options');
     const pdpSizeLabel = document.getElementById('pdp-size-label');
     const pdpSizeOptions = document.getElementById('pdp-size-options');
@@ -278,6 +393,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const shareWaBtn = document.getElementById('share-wa-btn');
     const shareTgBtn = document.getElementById('share-tg-btn');
     const shareLinkBtn = document.getElementById('share-link-btn');
+    const pdpTryBuilderBtn = document.getElementById('pdp-try-builder-btn');
+
+    // Set Comparison Elements
+    const compareFloatingBar = document.getElementById('compare-floating-bar');
+    const compareCountBadge = document.getElementById('compare-count-badge');
+    const compareThumbsStrip = document.getElementById('compare-thumbs-strip');
+    const clearCompareBtn = document.getElementById('clear-compare-btn');
+    const launchCompareBtn = document.getElementById('launch-compare-btn');
+    const compareModalOverlay = document.getElementById('compare-modal-overlay');
+    const closeCompareBtn = document.getElementById('close-compare-btn');
+    const compareTableWrapper = document.getElementById('compare-table-wrapper');
+
+    // CheckPoint Brick Lab & Mystery Unboxer Elements
+    const brickLabModalOverlay = document.getElementById('brick-lab-modal-overlay');
+    const closeBrickLabBtn = document.getElementById('close-brick-lab-btn');
+    const tabBuilderBtn = document.getElementById('tab-builder-btn');
+    const tabUnboxerBtn = document.getElementById('tab-unboxer-btn');
+    const brickBuilderPanel = document.getElementById('brick-builder-panel');
+    const brickUnboxerPanel = document.getElementById('brick-unboxer-panel');
+    const legoBaseplateGrid = document.getElementById('lego-baseplate-grid');
+    const builderBrickCount = document.getElementById('builder-brick-count');
+    const clearBuilderBtn = document.getElementById('clear-builder-btn');
+    const addCustomSetBtn = document.getElementById('add-custom-set-btn');
+    const colorSwatches = document.querySelectorAll('.color-swatch-btn');
+    const brickTypeBtns = document.querySelectorAll('.brick-type-btn');
+    const presetBtns = document.querySelectorAll('.btn-preset-load');
+
+    // Unboxer Elements
+    const mysteryFoilBox = document.getElementById('mystery-foil-box');
+    const btnShakeBox = document.getElementById('btn-shake-box');
+    const btnRipFoil = document.getElementById('btn-rip-foil');
+    const unboxerStepPill = document.getElementById('unboxer-step-pill');
+    const revealedToyCard = document.getElementById('revealed-toy-card');
+    const applyChaserCodeBtn = document.getElementById('apply-chaser-code-btn');
+    const btnResetUnbox = document.getElementById('btn-reset-unbox');
+
+    // Insiders Program Modal Elements
+    const insidersModalOverlay = document.getElementById('insiders-modal-overlay');
+    const closeInsidersBtn = document.getElementById('close-insiders-btn');
+    const insidersModalPoints = document.getElementById('insiders-modal-points');
 
     // Login Modal
     const loginModalOverlay = document.getElementById('login-modal-overlay');
@@ -304,9 +459,136 @@ document.addEventListener('DOMContentLoaded', () => {
     const countdownTimer = document.getElementById('countdown-timer');
 
     /* ==========================================================================
-       4. AUDIO CHIME (WEB AUDIO API)
+       4. AUDIO ENGINE (WEB AUDIO API - BRICK CLICKS & CHIMES)
        ========================================================================== */
+    function updateSfxUI() {
+        if (sfxIcon && sfxLabel && sfxToggleBtn) {
+            sfxIcon.textContent = sfxEnabled ? '🔊' : '🔇';
+            sfxLabel.textContent = sfxEnabled ? 'SFX: ON' : 'SFX: OFF';
+            sfxToggleBtn.classList.toggle('muted', !sfxEnabled);
+        }
+    }
+
+    if (sfxToggleBtn) {
+        sfxToggleBtn.addEventListener('click', () => {
+            sfxEnabled = !sfxEnabled;
+            saveStorage('checkpoint_sfx_enabled', sfxEnabled);
+            updateSfxUI();
+            if (sfxEnabled) playBrickClickSound();
+            triggerToast(sfxEnabled ? 'Tactile brick sound effects enabled.' : 'Sound effects muted.');
+        });
+        updateSfxUI();
+    }
+
+    function playBrickClickSound() {
+        if (!sfxEnabled) return;
+        try {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtx) return;
+            const ctx = new AudioCtx();
+            const now = ctx.currentTime;
+
+            // Fast snappy high-impact noise pulse
+            const bufferSize = Math.floor(ctx.sampleRate * 0.025);
+            const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.25));
+            }
+            const noise = ctx.createBufferSource();
+            noise.buffer = buffer;
+
+            const filter = ctx.createBiquadFilter();
+            filter.type = 'bandpass';
+            filter.frequency.setValueAtTime(2800, now);
+            filter.Q.setValueAtTime(3.5, now);
+
+            const gain = ctx.createGain();
+            gain.gain.setValueAtTime(0.28, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.024);
+
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(ctx.destination);
+            noise.start(now);
+
+            // Resonant plastic body snap
+            const osc = ctx.createOscillator();
+            const oscGain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(880, now);
+            osc.frequency.exponentialRampToValueAtTime(280, now + 0.03);
+
+            oscGain.gain.setValueAtTime(0.18, now);
+            oscGain.gain.exponentialRampToValueAtTime(0.001, now + 0.03);
+
+            osc.connect(oscGain);
+            oscGain.connect(ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.035);
+        } catch (e) {
+            // Audio error silent fallback
+        }
+    }
+
+    function playBoxRattleSound() {
+        if (!sfxEnabled) return;
+        try {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtx) return;
+            const ctx = new AudioCtx();
+            const now = ctx.currentTime;
+
+            [0, 0.05, 0.11, 0.18].forEach((t) => {
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(500 + Math.random() * 450, now + t);
+                gain.gain.setValueAtTime(0.16, now + t);
+                gain.gain.exponentialRampToValueAtTime(0.001, now + t + 0.035);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start(now + t);
+                osc.stop(now + t + 0.04);
+            });
+        } catch (e) {}
+    }
+
+    function playFoilRipSound() {
+        if (!sfxEnabled) return;
+        try {
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            if (!AudioCtx) return;
+            const ctx = new AudioCtx();
+            const now = ctx.currentTime;
+
+            const bufferSize = Math.floor(ctx.sampleRate * 0.16);
+            const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = (Math.random() * 2 - 1) * Math.sin((i / bufferSize) * Math.PI);
+            }
+            const noise = ctx.createBufferSource();
+            noise.buffer = buffer;
+
+            const filter = ctx.createBiquadFilter();
+            filter.type = 'highpass';
+            filter.frequency.setValueAtTime(1600, now);
+            filter.frequency.exponentialRampToValueAtTime(4500, now + 0.16);
+
+            const gain = ctx.createGain();
+            gain.gain.setValueAtTime(0.24, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.16);
+
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(ctx.destination);
+            noise.start(now);
+        } catch (e) {}
+    }
+
     function playCheckoutChime() {
+        if (!sfxEnabled) return;
         try {
             const AudioCtx = window.AudioContext || window.webkitAudioContext;
             if (!AudioCtx) return;
@@ -338,17 +620,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
-       5. CATALOG RENDERING (MATCHING PRODUCT PHOTOS)
+       5. CATALOG RENDERING & AGE FILTERING
        ========================================================================== */
     function renderCatalog() {
         let items = PRODUCTS.filter(p => {
             const catMatch = activeCategory === 'all' || p.category === activeCategory;
+            
+            let ageMatch = true;
+            if (activeAge === '3+') ageMatch = p.ageNum <= 3;
+            else if (activeAge === '6+') ageMatch = p.ageNum <= 6;
+            else if (activeAge === '8+') ageMatch = p.ageNum <= 8;
+            else if (activeAge === '12+') ageMatch = p.ageNum <= 12;
+            else if (activeAge === '18+') ageMatch = p.ageNum >= 18 || p.isAdultsWelcome;
+
             const q = activeQuery.toLowerCase().trim();
             const searchMatch = !q ||
                 p.name.toLowerCase().includes(q) ||
                 p.description.toLowerCase().includes(q) ||
-                p.tagLabel.toLowerCase().includes(q);
-            return catMatch && searchMatch;
+                p.tagLabel.toLowerCase().includes(q) ||
+                (p.pieces && p.pieces.toLowerCase().includes(q)) ||
+                (p.itemNumber && p.itemNumber.toLowerCase().includes(q));
+
+            return catMatch && ageMatch && searchMatch;
         });
 
         if (activeSort === 'price-low') {
@@ -369,6 +662,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             items.forEach(product => {
                 const isWishlisted = wishlist.includes(product.id);
+                const isCompared = comparedProducts.includes(product.id);
+
                 const card = document.createElement('div');
                 card.className = 'product-card-807';
                 card.dataset.id = product.id;
@@ -391,7 +686,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="card-details-box">
                         <h4 class="card-product-title">${product.name}</h4>
+                        <div class="card-spec-strip">
+                            <span>Ages <strong>${product.age}</strong></span>
+                            <span class="card-spec-bullet">•</span>
+                            <span>${product.pieces}</span>
+                            <span class="card-spec-bullet">•</span>
+                            <span>⭐ ${product.sparks} pts</span>
+                        </div>
                         <div class="card-product-price">$${product.price.toFixed(2)}</div>
+                        <div class="card-compare-row">
+                            <button class="btn-card-compare ${isCompared ? 'active' : ''}" data-id="${product.id}" aria-label="Compare set">
+                                <span class="compare-checkbox-box"></span>
+                                <span>${isCompared ? 'Comparing' : 'Compare'}</span>
+                            </button>
+                            <small style="color:var(--text-muted);font-weight:700;">${product.difficulty}</small>
+                        </div>
                     </div>
                 `;
                 productGrid.appendChild(card);
@@ -402,6 +711,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Category Filter Pills
     categoryPills.forEach(pill => {
         pill.addEventListener('click', () => {
+            playBrickClickSound();
             categoryPills.forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
             activeCategory = pill.dataset.category;
@@ -414,11 +724,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // LEGO.com "Shop by Age" Filter Pills
+    agePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            playBrickClickSound();
+            agePills.forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            activeAge = pill.dataset.age;
+            renderCatalog();
+        });
+    });
+
     // Nav Links
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             const targetNav = link.dataset.nav;
             if (targetNav) {
+                playBrickClickSound();
                 activeCategory = targetNav;
                 categoryPills.forEach(p => {
                     p.classList.toggle('active', p.dataset.category === activeCategory);
@@ -433,6 +755,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Collab Buttons
     document.querySelectorAll('.filter-trigger-btn').forEach(btn => {
         btn.addEventListener('click', () => {
+            playBrickClickSound();
             const f = btn.dataset.filter;
             if (f) {
                 activeCategory = f;
@@ -453,6 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     clearSearchBtn.addEventListener('click', () => {
+        playBrickClickSound();
         catalogSearch.value = '';
         activeQuery = '';
         clearSearchBtn.style.display = 'none';
@@ -471,23 +795,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sort Dropdown
     sortSelect.addEventListener('change', (e) => {
+        playBrickClickSound();
         activeSort = e.target.value;
         renderCatalog();
     });
 
     resetFiltersBtn.addEventListener('click', () => {
+        playBrickClickSound();
         activeCategory = 'all';
+        activeAge = 'all';
         activeQuery = '';
         activeSort = 'featured';
         catalogSearch.value = '';
         clearSearchBtn.style.display = 'none';
         sortSelect.value = 'featured';
         categoryPills.forEach(p => p.classList.toggle('active', p.dataset.category === 'all'));
+        agePills.forEach(p => p.classList.toggle('active', p.dataset.age === 'all'));
         renderCatalog();
     });
 
     /* ==========================================================================
-       6. PRODUCT DETAIL MODAL (PDP - 807 GARAGE EXPERIENCE)
+       6. PRODUCT DETAIL MODAL (PDP - LEGO SPECIFICATIONS DASHBOARD)
        ========================================================================== */
     function openProductDetail(productId) {
         const product = PRODUCTS.find(p => p.id === productId);
@@ -506,6 +834,7 @@ document.addEventListener('DOMContentLoaded', () => {
             thumb.className = `pdp-thumb-item ${index === 0 ? 'active' : ''}`;
             thumb.innerHTML = `<img src="${imgUrl}" alt="Thumbnail ${index + 1}">`;
             thumb.addEventListener('click', () => {
+                playBrickClickSound();
                 document.querySelectorAll('.pdp-thumb-item').forEach(t => t.classList.remove('active'));
                 thumb.classList.add('active');
                 pdpMainImg.src = imgUrl;
@@ -520,6 +849,12 @@ document.addEventListener('DOMContentLoaded', () => {
         pdpPrice.textContent = `$${product.price.toFixed(2)}`;
         pdpFullDescription.textContent = product.description;
 
+        // LEGO 4-Grid Set Specification Badges
+        if (pdpSpecAge) pdpSpecAge.textContent = product.age;
+        if (pdpSpecPieces) pdpSpecPieces.textContent = product.pieces;
+        if (pdpSpecItem) pdpSpecItem.textContent = product.itemNumber;
+        if (pdpSpecSparks) pdpSpecSparks.textContent = `⭐ ${product.sparks} pts`;
+
         // Colors
         pdpColorOptions.innerHTML = '';
         product.colors.forEach((col, idx) => {
@@ -527,6 +862,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pill.className = `color-option-pill ${idx === 0 ? 'active' : ''}`;
             pill.textContent = col;
             pill.addEventListener('click', () => {
+                playBrickClickSound();
                 document.querySelectorAll('.color-option-pill').forEach(c => c.classList.remove('active'));
                 pill.classList.add('active');
             });
@@ -541,6 +877,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.className = `pdp-size-btn ${idx === 0 ? 'active' : ''}`;
             btn.textContent = sz;
             btn.addEventListener('click', () => {
+                playBrickClickSound();
                 document.querySelectorAll('.pdp-size-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
             });
@@ -566,13 +903,30 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === pdpModalOverlay) closeProductDetail();
     });
 
-    // Delegate Card Click to Open PDP or Quick-Add
+    if (pdpTryBuilderBtn) {
+        pdpTryBuilderBtn.addEventListener('click', () => {
+            closeProductDetail();
+            openBrickLab();
+        });
+    }
+
+    // Delegate Card Click to Open PDP, Quick-Add, or Compare
     productGrid.addEventListener('click', (e) => {
+        // Compare button click
+        const compareBtn = e.target.closest('.btn-card-compare');
+        if (compareBtn) {
+            e.stopPropagation();
+            const id = Number(compareBtn.dataset.id);
+            toggleProductComparison(id);
+            return;
+        }
+
         // Quick-Add to Cart button
         const quickAddBtn = e.target.closest('.btn-card-quick-add');
         if (quickAddBtn) {
             e.stopPropagation();
             const id = Number(quickAddBtn.dataset.id);
+            playBrickClickSound();
             addToCart(id);
             openBag();
             return;
@@ -596,6 +950,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // PDP Buy Now Button (Instant Checkout)
     pdpBuyNowBtn.addEventListener('click', () => {
         if (!selectedPdpProduct) return;
+        playBrickClickSound();
         addToCart(selectedPdpProduct.id);
         closeProductDetail();
         openCheckout();
@@ -604,6 +959,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // PDP Add to Cart Button
     pdpAddCartBtn.addEventListener('click', () => {
         if (!selectedPdpProduct) return;
+        playBrickClickSound();
         addToCart(selectedPdpProduct.id);
         closeProductDetail();
         openBag();
@@ -635,9 +991,399 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       7. WISHLIST MANAGEMENT
+       7. SET COMPARISON FEATURE (LEGO.COM SPEC SHEET COMPARISON)
+       ========================================================================== */
+    function toggleProductComparison(productId) {
+        playBrickClickSound();
+        const idx = comparedProducts.indexOf(productId);
+        if (idx > -1) {
+            comparedProducts.splice(idx, 1);
+        } else {
+            if (comparedProducts.length >= 3) {
+                triggerToast('You can compare a maximum of 3 sets at once.');
+                return;
+            }
+            comparedProducts.push(productId);
+        }
+
+        updateCompareBarUI();
+        renderCatalog();
+    }
+
+    function updateCompareBarUI() {
+        if (comparedProducts.length === 0) {
+            compareFloatingBar.style.display = 'none';
+        } else {
+            compareFloatingBar.style.display = 'block';
+            compareCountBadge.textContent = `${comparedProducts.length} / 3`;
+
+            compareThumbsStrip.innerHTML = '';
+            comparedProducts.forEach(id => {
+                const p = PRODUCTS.find(prod => prod.id === id);
+                if (p) {
+                    const img = document.createElement('img');
+                    img.src = p.images[0];
+                    img.alt = p.name;
+                    img.className = 'compare-thumb-mini';
+                    compareThumbsStrip.appendChild(img);
+                }
+            });
+        }
+    }
+
+    clearCompareBtn.addEventListener('click', () => {
+        playBrickClickSound();
+        comparedProducts = [];
+        updateCompareBarUI();
+        renderCatalog();
+        triggerToast('Comparison selection cleared.');
+    });
+
+    function openCompareModal() {
+        if (comparedProducts.length === 0) return;
+        playBrickClickSound();
+
+        const sets = comparedProducts.map(id => PRODUCTS.find(p => p.id === id)).filter(Boolean);
+
+        let tableHtml = `
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Set Overview</th>
+                        ${sets.map(s => `
+                            <td class="compare-product-col">
+                                <img src="${s.images[0]}" alt="${s.name}" class="compare-col-img">
+                                <h4 class="compare-col-title">${s.name}</h4>
+                                <div class="compare-col-price">$${s.price.toFixed(2)}</div>
+                                <button class="btn-compare-buy" data-id="${s.id}">Add to Bag</button>
+                            </td>
+                        `).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Recommended Age</th>
+                        ${sets.map(s => `<td><strong>${s.age}</strong></td>`).join('')}
+                    </tr>
+                    <tr>
+                        <th>Pieces / Parts</th>
+                        ${sets.map(s => `<td><strong>${s.pieces}</strong></td>`).join('')}
+                    </tr>
+                    <tr>
+                        <th>Item Number</th>
+                        ${sets.map(s => `<td><code>${s.itemNumber}</code></td>`).join('')}
+                    </tr>
+                    <tr>
+                        <th>Insiders Sparks Earned</th>
+                        ${sets.map(s => `<td>⭐ <strong>${s.sparks} Sparks</strong></td>`).join('')}
+                    </tr>
+                    <tr>
+                        <th>Building Difficulty</th>
+                        ${sets.map(s => `<td>${s.difficulty}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <th>Customer Rating</th>
+                        ${sets.map(s => `<td>★ <strong>${s.rating.toFixed(1)} / 5.0</strong></td>`).join('')}
+                    </tr>
+                    <tr>
+                        <th>Product Dimensions</th>
+                        ${sets.map(s => `<td>${s.dimensions}</td>`).join('')}
+                    </tr>
+                    <tr>
+                        <th>Child Safety Standards</th>
+                        ${sets.map(() => `<td>ASTM F963 / EN71 Non-Toxic Certified</td>`).join('')}
+                    </tr>
+                </tbody>
+            </table>
+        `;
+
+        compareTableWrapper.innerHTML = tableHtml;
+        compareModalOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+
+        compareTableWrapper.querySelectorAll('.btn-compare-buy').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = Number(btn.dataset.id);
+                addToCart(id);
+                compareModalOverlay.classList.remove('open');
+                document.body.style.overflow = '';
+                openBag();
+            });
+        });
+    }
+
+    launchCompareBtn.addEventListener('click', openCompareModal);
+    closeCompareBtn.addEventListener('click', () => {
+        compareModalOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+    compareModalOverlay.addEventListener('click', (e) => {
+        if (e.target === compareModalOverlay) {
+            compareModalOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+
+    /* ==========================================================================
+       8. CHECKPOINT BRICK LAB & MYSTERY UNBOXING STUDIO
+       ========================================================================== */
+    let activeBrickColor = '#E60012';
+    let baseplateBricks = new Array(64).fill(null);
+
+    function openBrickLab() {
+        playBrickClickSound();
+        brickLabModalOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        initBaseplate();
+    }
+
+    function closeBrickLab() {
+        brickLabModalOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    if (openBrickLabNavBtn) openBrickLabNavBtn.addEventListener('click', openBrickLab);
+    if (heroBrickLabBtn) heroBrickLabBtn.addEventListener('click', openBrickLab);
+    if (closeBrickLabBtn) closeBrickLabBtn.addEventListener('click', closeBrickLab);
+    brickLabModalOverlay.addEventListener('click', (e) => {
+        if (e.target === brickLabModalOverlay) closeBrickLab();
+    });
+
+    // Tab Switching
+    tabBuilderBtn.addEventListener('click', () => {
+        playBrickClickSound();
+        tabBuilderBtn.classList.add('active');
+        tabUnboxerBtn.classList.remove('active');
+        brickBuilderPanel.classList.add('active');
+        brickUnboxerPanel.classList.remove('active');
+    });
+
+    tabUnboxerBtn.addEventListener('click', () => {
+        playBrickClickSound();
+        tabUnboxerBtn.classList.add('active');
+        tabBuilderBtn.classList.remove('active');
+        brickUnboxerPanel.classList.add('active');
+        brickBuilderPanel.classList.remove('active');
+    });
+
+    // Color swatches
+    colorSwatches.forEach(swatch => {
+        swatch.addEventListener('click', () => {
+            playBrickClickSound();
+            colorSwatches.forEach(s => s.classList.remove('active'));
+            swatch.classList.add('active');
+            activeBrickColor = swatch.dataset.color;
+        });
+    });
+
+    // Brick types
+    brickTypeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            playBrickClickSound();
+            brickTypeBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+    // Initialize 8x8 Baseplate
+    function initBaseplate() {
+        if (legoBaseplateGrid.children.length === 64) return;
+        legoBaseplateGrid.innerHTML = '';
+        for (let i = 0; i < 64; i++) {
+            const stud = document.createElement('div');
+            stud.className = 'baseplate-stud';
+            stud.dataset.index = i;
+            stud.addEventListener('click', () => {
+                placeBrickOnStud(i, stud);
+            });
+            legoBaseplateGrid.appendChild(stud);
+        }
+    }
+
+    function placeBrickOnStud(index, studEl) {
+        playBrickClickSound();
+        if (baseplateBricks[index] === activeBrickColor) {
+            // Remove
+            baseplateBricks[index] = null;
+            studEl.style.backgroundColor = '';
+            studEl.classList.remove('has-brick');
+        } else {
+            // Place
+            baseplateBricks[index] = activeBrickColor;
+            studEl.style.backgroundColor = activeBrickColor;
+            studEl.classList.add('has-brick');
+        }
+
+        const count = baseplateBricks.filter(Boolean).length;
+        builderBrickCount.textContent = count;
+    }
+
+    clearBuilderBtn.addEventListener('click', () => {
+        playBrickClickSound();
+        baseplateBricks.fill(null);
+        document.querySelectorAll('.baseplate-stud').forEach(s => {
+            s.style.backgroundColor = '';
+            s.classList.remove('has-brick');
+        });
+        builderBrickCount.textContent = '0';
+        triggerToast('Baseplate cleared.');
+    });
+
+    // Preset builds
+    const PRESETS = {
+        castle: {
+            color: '#0066CC',
+            indices: [0, 2, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 25, 26, 27, 28, 29, 30, 33, 34, 37, 38, 41, 42, 45, 46, 49, 50, 53, 54, 56, 57, 58, 59, 60, 61, 62, 63]
+        },
+        robot: {
+            color: '#1E293B',
+            indices: [10, 13, 17, 18, 19, 20, 21, 22, 25, 26, 29, 30, 33, 34, 35, 36, 37, 38, 42, 45, 50, 51, 52, 53]
+        },
+        duck: {
+            color: '#FFC400',
+            indices: [11, 12, 18, 19, 20, 25, 26, 27, 28, 33, 34, 35, 36, 37, 41, 42, 43, 44, 45, 46, 50, 51, 52, 53]
+        },
+        heart: {
+            color: '#E60012',
+            indices: [9, 10, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 33, 34, 35, 36, 37, 38, 42, 43, 44, 45, 51, 52]
+        }
+    };
+
+    presetBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            playBrickClickSound();
+            const pKey = btn.dataset.preset;
+            const preset = PRESETS[pKey];
+            if (!preset) return;
+
+            baseplateBricks.fill(null);
+            document.querySelectorAll('.baseplate-stud').forEach((s, i) => {
+                if (preset.indices.includes(i)) {
+                    baseplateBricks[i] = preset.color;
+                    s.style.backgroundColor = preset.color;
+                    s.classList.add('has-brick');
+                } else {
+                    s.style.backgroundColor = '';
+                    s.classList.remove('has-brick');
+                }
+            });
+
+            builderBrickCount.textContent = preset.indices.length;
+            triggerToast(`Loaded <strong>${btn.textContent}</strong> preset build!`);
+        });
+    });
+
+    addCustomSetBtn.addEventListener('click', () => {
+        playBrickClickSound();
+        addToCart(99);
+        closeBrickLab();
+        openBag();
+        triggerToast('CheckPoint Custom 100-Brick Creator Color Tub added to bag!');
+    });
+
+    // Mystery Blind Box Unboxing Flow
+    btnShakeBox.addEventListener('click', () => {
+        mysteryFoilBox.classList.add('shaking');
+        playBoxRattleSound();
+        unboxerStepPill.textContent = 'STEP 2: TEAR FOIL SEAL';
+        btnRipFoil.disabled = false;
+
+        setTimeout(() => {
+            mysteryFoilBox.classList.remove('shaking');
+        }, 1200);
+    });
+
+    btnRipFoil.addEventListener('click', () => {
+        playFoilRipSound();
+        playCheckoutChime();
+        runConfettiAnimation();
+
+        mysteryFoilBox.style.display = 'none';
+        revealedToyCard.style.display = 'flex';
+        btnShakeBox.style.display = 'none';
+        btnRipFoil.style.display = 'none';
+        btnResetUnbox.style.display = 'inline-block';
+        unboxerStepPill.textContent = 'UNBOXED & REVEALED!';
+
+        triggerToast('🌟 UNLOCKED: Secret 1/144 Golden Celestial AstroBunny!');
+    });
+
+    applyChaserCodeBtn.addEventListener('click', () => {
+        playBrickClickSound();
+        closeBrickLab();
+        openBag();
+        couponInput.value = 'CHASER20';
+        currentDiscountRate = 0.20;
+        couponFeedback.className = 'coupon-feedback success';
+        couponFeedback.textContent = 'Secret Chaser VIP code "CHASER20" applied (20% Off)';
+        updateBagUI();
+        triggerToast('20% Secret Chaser discount applied to bag!');
+    });
+
+    btnResetUnbox.addEventListener('click', () => {
+        playBrickClickSound();
+        mysteryFoilBox.style.display = 'flex';
+        revealedToyCard.style.display = 'none';
+        btnShakeBox.style.display = 'inline-block';
+        btnRipFoil.style.display = 'inline-block';
+        btnRipFoil.disabled = true;
+        btnResetUnbox.style.display = 'none';
+        unboxerStepPill.textContent = 'STEP 1: SHAKE BOX';
+    });
+
+    /* ==========================================================================
+       9. LEGO INSIDERS REWARDS PROGRAM MODAL
+       ========================================================================== */
+    function openInsidersModal() {
+        playBrickClickSound();
+        insidersModalPoints.textContent = insidersSparks;
+        insidersModalOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeInsidersModal() {
+        insidersModalOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    if (insidersToggleBtn) insidersToggleBtn.addEventListener('click', openInsidersModal);
+    if (closeInsidersBtn) closeInsidersBtn.addEventListener('click', closeInsidersModal);
+    insidersModalOverlay.addEventListener('click', (e) => {
+        if (e.target === insidersModalOverlay) closeInsidersModal();
+    });
+
+    document.querySelectorAll('.btn-redeem-voucher').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const cost = Number(btn.dataset.cost);
+            const val = Number(btn.dataset.val);
+            if (insidersSparks < cost) {
+                triggerToast(`Not enough Sparks balance (${insidersSparks}/${cost}).`);
+                return;
+            }
+
+            insidersSparks -= cost;
+            saveStorage('checkpoint_insiders_sparks', insidersSparks);
+            headerSparksCount.textContent = insidersSparks;
+            insidersModalPoints.textContent = insidersSparks;
+
+            playCheckoutChime();
+            closeInsidersModal();
+            openBag();
+            couponInput.value = `SPARKS${val}`;
+            DISCOUNT_CODES[`SPARKS${val}`] = val / 50; // proportional discount
+            currentDiscountRate = val / 50;
+            couponFeedback.className = 'coupon-feedback success';
+            couponFeedback.textContent = `$${val}.00 Sparks Voucher applied!`;
+            updateBagUI();
+            triggerToast(`Redeemed $${val}.00 off with ${cost} Sparks!`);
+        });
+    });
+
+    /* ==========================================================================
+       10. WISHLIST MANAGEMENT
        ========================================================================== */
     function toggleWishlist(productId) {
+        playBrickClickSound();
         const product = PRODUCTS.find(p => p.id === productId);
         if (!product) return;
 
@@ -656,6 +1402,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function openWishlist() {
+        playBrickClickSound();
         wishlistDrawer.classList.add('open');
         wishlistDrawerOverlay.classList.add('open');
         document.body.style.overflow = 'hidden';
@@ -714,6 +1461,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const moveBtn = e.target.closest('.btn-move-cart');
         if (moveBtn) {
             const id = Number(moveBtn.dataset.id);
+            playBrickClickSound();
             addToCart(id);
             toggleWishlist(id);
             closeWishlist();
@@ -729,9 +1477,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ==========================================================================
-       8. USER AUTH / LOGIN MODAL
+       11. USER AUTH / LOGIN MODAL
        ========================================================================== */
     function openLogin() {
+        playBrickClickSound();
         loginModalOverlay.classList.add('open');
         document.body.style.overflow = 'hidden';
     }
@@ -791,7 +1540,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================================================
-       9. SHOPPING BAG / CART LOGIC
+       12. SHOPPING BAG / CART LOGIC & LEGO GWP MILESTONE LADDER
        ========================================================================== */
     function openBag() {
         cartDrawer.classList.add('open');
@@ -805,10 +1554,14 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = '';
     }
 
-    cartToggleBtn.addEventListener('click', openBag);
+    cartToggleBtn.addEventListener('click', () => {
+        playBrickClickSound();
+        openBag();
+    });
     closeCartBtn.addEventListener('click', closeBag);
     cartDrawerOverlay.addEventListener('click', closeBag);
     startShoppingBtn.addEventListener('click', () => {
+        playBrickClickSound();
         closeBag();
         document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
     });
@@ -832,11 +1585,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         saveStorage('checkpoint_cart_items', cart);
         updateBagUI();
-
         triggerToast(`Added <strong>${product.name}</strong> to bag.`);
     }
 
     function modifyQty(productId, delta) {
+        playBrickClickSound();
         const item = cart.find(i => i.id === productId);
         if (!item) return;
 
@@ -850,10 +1603,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function removeFromCart(productId) {
+        playBrickClickSound();
         cart = cart.filter(i => i.id !== productId);
         saveStorage('checkpoint_cart_items', cart);
         updateBagUI();
         triggerToast('Item removed from shopping bag.');
+    }
+
+    // Sparks 200 pts (-$5.00) Redemption toggle in cart
+    if (redeemSparksBtn) {
+        redeemSparksBtn.addEventListener('click', () => {
+            playBrickClickSound();
+            isSparksRedeemed = !isSparksRedeemed;
+            updateBagUI();
+            triggerToast(isSparksRedeemed ? 'Redeemed 200 Sparks for $5.00 off!' : 'Sparks redemption removed.');
+        });
     }
 
     function updateBagUI() {
@@ -897,34 +1661,123 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Calculations
-        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        const discountVal = subtotal * currentDiscountRate;
-        const discountedSubtotal = subtotal - discountVal;
-        const isFree = discountedSubtotal >= FREE_SHIPPING_LIMIT || subtotal === 0;
-        const shippingCost = isFree ? 0.00 : SHIPPING_FLAT_FEE;
-        const grandTotal = subtotal === 0 ? 0 : (discountedSubtotal + shippingCost);
+        const rawSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const promoDiscountVal = rawSubtotal * currentDiscountRate;
+        const sparksDiscountVal = (isSparksRedeemed && rawSubtotal >= 10) ? 5.00 : 0.00;
+        const totalDiscount = promoDiscountVal + sparksDiscountVal;
+        const discountedSubtotal = Math.max(0, rawSubtotal - totalDiscount);
+        const isFreeShipping = discountedSubtotal >= FREE_SHIPPING_LIMIT || rawSubtotal === 0;
+        const shippingCost = isFreeShipping ? 0.00 : SHIPPING_FLAT_FEE;
+        const grandTotal = rawSubtotal === 0 ? 0 : (discountedSubtotal + shippingCost);
 
-        drawerSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+        drawerSubtotal.textContent = `$${rawSubtotal.toFixed(2)}`;
 
+        // Promo Discount
         if (currentDiscountRate > 0) {
             drawerDiscountRow.style.display = 'flex';
-            drawerDiscount.textContent = `-$${discountVal.toFixed(2)}`;
+            drawerDiscount.textContent = `-$${promoDiscountVal.toFixed(2)}`;
         } else {
             drawerDiscountRow.style.display = 'none';
         }
 
-        drawerShipping.textContent = isFree ? 'FREE' : `$${shippingCost.toFixed(2)}`;
+        // Sparks Redemption Row
+        if (isSparksRedeemed && sparksDiscountVal > 0) {
+            drawerSparksDiscountRow.style.display = 'flex';
+            drawerSparksDiscount.textContent = `-$${sparksDiscountVal.toFixed(2)}`;
+            if (redeemSparksBtn) {
+                redeemSparksBtn.textContent = 'Redeemed (-$5.00) [Remove]';
+                redeemSparksBtn.classList.add('applied');
+            }
+        } else {
+            drawerSparksDiscountRow.style.display = 'none';
+            if (redeemSparksBtn) {
+                redeemSparksBtn.textContent = 'Redeem 200 pts (-$5.00)';
+                redeemSparksBtn.classList.remove('applied');
+            }
+        }
+
+        drawerShipping.textContent = isFreeShipping ? 'FREE' : `$${shippingCost.toFixed(2)}`;
         drawerTotal.textContent = `$${grandTotal.toFixed(2)}`;
 
-        // Progress Bar
-        const percent = Math.min(100, (discountedSubtotal / FREE_SHIPPING_LIMIT) * 100);
-        shippingProgressBar.style.width = `${percent}%`;
+        // LEGO Insiders Sparks Earned on this order
+        const earnedSparksVal = Math.round(discountedSubtotal * 10);
+        if (cartEarnedSparks) cartEarnedSparks.textContent = `+${earnedSparksVal}`;
+        if (cartCurrentBalance) cartCurrentBalance.textContent = insidersSparks;
+        if (headerSparksCount) headerSparksCount.textContent = insidersSparks;
 
-        if (isFree && subtotal > 0) {
-            shippingProgressText.innerHTML = `<strong>Free Express Shipping Unlocked!</strong>`;
+        // LEGO 3-Tier GWP Milestone Ladder ($40 / $80 / $120)
+        const progressPercent = Math.min(100, (discountedSubtotal / 120.00) * 100);
+        if (gwpProgressBar) gwpProgressBar.style.width = `${progressPercent}%`;
+
+        const unlockedGifts = [];
+        if (discountedSubtotal >= 40.00) {
+            if (gwpStep1) gwpStep1.classList.add('unlocked');
+            unlockedGifts.push('🎁 Free Mystery Polybag');
         } else {
-            const diff = (FREE_SHIPPING_LIMIT - discountedSubtotal).toFixed(2);
-            shippingProgressText.innerHTML = `Add <strong>$${diff}</strong> more for <strong>FREE Express Shipping</strong>`;
+            if (gwpStep1) gwpStep1.classList.remove('unlocked');
+        }
+
+        if (discountedSubtotal >= 80.00) {
+            if (gwpStep2) gwpStep2.classList.add('unlocked');
+            unlockedGifts.push('🚚 Free Courier Shipping');
+        } else {
+            if (gwpStep2) gwpStep2.classList.remove('unlocked');
+        }
+
+        if (discountedSubtotal >= 120.00) {
+            if (gwpStep3) gwpStep3.classList.add('unlocked');
+            unlockedGifts.push('🏆 Free Gold Brick Trophy Set');
+        } else {
+            if (gwpStep3) gwpStep3.classList.remove('unlocked');
+        }
+
+        // Render GWP pills and status text
+        if (gwpStatusText) {
+            if (discountedSubtotal >= 120.00) {
+                gwpStatusText.innerHTML = `🎉 <strong>ALL VIP REWARDS UNLOCKED!</strong> (Polybag + Free Ship + Trophy)`;
+            } else if (discountedSubtotal >= 80.00) {
+                const diff = (120.00 - discountedSubtotal).toFixed(2);
+                gwpStatusText.innerHTML = `Add <strong>$${diff}</strong> more for <strong>Free Gold Brick Trophy Set</strong>!`;
+            } else if (discountedSubtotal >= 40.00) {
+                const diff = (80.00 - discountedSubtotal).toFixed(2);
+                gwpStatusText.innerHTML = `Add <strong>$${diff}</strong> more for <strong>FREE Express Shipping</strong>!`;
+            } else {
+                const diff = (40.00 - discountedSubtotal).toFixed(2);
+                gwpStatusText.innerHTML = `Add <strong>$${diff}</strong> more for <strong>Free Mystery Polybag</strong>!`;
+            }
+        }
+
+        if (gwpUnlockedBadges) {
+            gwpUnlockedBadges.innerHTML = unlockedGifts.map(g => `<span class="gwp-gift-pill">${g}</span>`).join('');
+        }
+
+        // Inject Free Gift line items into cart list if unlocked
+        if (cart.length > 0 && discountedSubtotal >= 40.00) {
+            const giftRow = document.createElement('div');
+            giftRow.className = 'bag-item-card gift-item';
+            giftRow.innerHTML = `
+                <img src="images/astro_bunny_closeup.jpg" alt="Free Polybag" class="bag-thumb">
+                <div class="bag-meta">
+                    <span class="gift-tag">GWP UNLOCKED</span>
+                    <h4 class="bag-title">Mystery Collector Polybag Keychain</h4>
+                    <div class="bag-price" style="color:var(--brand-green); font-weight:800;">FREE ($0.00)</div>
+                </div>
+            `;
+            cartItemsContainer.appendChild(giftRow);
+        }
+
+        if (cart.length > 0 && discountedSubtotal >= 120.00) {
+            const trophyRow = document.createElement('div');
+            trophyRow.className = 'bag-item-card gift-item';
+            trophyRow.innerHTML = `
+                <img src="images/robot_closeup.jpg" alt="Free Gold Trophy" class="bag-thumb">
+                <div class="bag-meta">
+                    <span class="gift-tag">VIP TIER 3 REWARD</span>
+                    <h4 class="bag-title">CheckPoint Gold Brick Trophy Mini-Set</h4>
+                    <div class="bag-price" style="color:var(--brand-green); font-weight:800;">FREE ($0.00)</div>
+                </div>
+            `;
+            cartItemsContainer.appendChild(trophyRow);
         }
     }
 
@@ -939,6 +1792,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     applyCouponBtn.addEventListener('click', () => {
+        playBrickClickSound();
         const code = couponInput.value.trim().toUpperCase();
         if (!code) return;
 
@@ -949,22 +1803,26 @@ document.addEventListener('DOMContentLoaded', () => {
             updateBagUI();
         } else {
             couponFeedback.className = 'coupon-feedback error';
-            couponFeedback.textContent = `Invalid code. Try CHECKPOINT10 or 807GARAGE`;
+            couponFeedback.textContent = `Invalid code. Try CHECKPOINT10, CHASER20 or 807GARAGE`;
         }
     });
 
     /* ==========================================================================
-       10. CHECKOUT MODAL & WEB AUDIO CHIME
+       13. CHECKOUT MODAL & WEB AUDIO CHIME
        ========================================================================== */
     function openCheckout() {
         if (cart.length === 0) return;
+        playBrickClickSound();
         closeBag();
 
-        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        const discountVal = subtotal * currentDiscountRate;
-        const isFree = (subtotal - discountVal) >= FREE_SHIPPING_LIMIT;
+        const rawSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const promoDiscountVal = rawSubtotal * currentDiscountRate;
+        const sparksDiscountVal = (isSparksRedeemed && rawSubtotal >= 10) ? 5.00 : 0.00;
+        const totalDiscount = promoDiscountVal + sparksDiscountVal;
+        const discountedSubtotal = Math.max(0, rawSubtotal - totalDiscount);
+        const isFree = discountedSubtotal >= FREE_SHIPPING_LIMIT;
         const shippingCost = isFree ? 0.00 : SHIPPING_FLAT_FEE;
-        const grandTotal = (subtotal - discountVal) + shippingCost;
+        const grandTotal = discountedSubtotal + shippingCost;
         const count = cart.reduce((sum, item) => sum + item.quantity, 0);
 
         modalSummaryCount.textContent = `${count} item${count === 1 ? '' : 's'}`;
@@ -992,6 +1850,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     paymentPills.forEach(pill => {
         pill.addEventListener('click', () => {
+            playBrickClickSound();
             paymentPills.forEach(p => p.classList.remove('active'));
             pill.classList.add('active');
         });
@@ -1010,8 +1869,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         closeCheckout();
 
+        // Award Insiders Sparks for purchase!
+        const rawSubtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const pointsEarned = Math.round(rawSubtotal * 10);
+        insidersSparks += pointsEarned;
+        saveStorage('checkpoint_insiders_sparks', insidersSparks);
+        if (headerSparksCount) headerSparksCount.textContent = insidersSparks;
+
         // Reset cart
         cart = [];
+        isSparksRedeemed = false;
         saveStorage('checkpoint_cart_items', cart);
         updateBagUI();
         checkoutForm.reset();
@@ -1026,13 +1893,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     successContinueBtn.addEventListener('click', () => {
+        playBrickClickSound();
         successModalOverlay.classList.remove('open');
         document.body.style.overflow = '';
         document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
     });
 
     /* ==========================================================================
-       11. COUNTDOWN TICKER & CONFETTI
+       14. COUNTDOWN TICKER & CONFETTI
        ========================================================================== */
     let timerSecs = 5 * 3600 + 42 * 60 + 19;
     setInterval(() => {
@@ -1138,22 +2006,22 @@ document.addEventListener('DOMContentLoaded', () => {
             closeLogin();
             closeProductDetail();
             closeCheckout();
+            closeBrickLab();
+            if (compareModalOverlay) compareModalOverlay.classList.remove('open');
+            if (insidersModalOverlay) insidersModalOverlay.classList.remove('open');
             successModalOverlay.classList.remove('open');
             document.body.style.overflow = '';
         }
     });
 
     /* ==========================================================================
-       12. INITIALIZATION
+       15. INITIALIZATION & SCROLL SHADOW
        ========================================================================== */
     renderCatalog();
     updateBagUI();
     updateWishlistUI();
     updateAuthUI();
 
-    /* ==========================================================================
-       13. HEADER SCROLL SHADOW
-       ========================================================================== */
     const siteHeader = document.getElementById('site-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
